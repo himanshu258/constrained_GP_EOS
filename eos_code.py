@@ -225,7 +225,7 @@ def poly_regression_unified(x_train1, x_train2, y_train, x_test, degree):
     
     return mu_regression, mu_test_regression
 
-def gradientFunction(x_train1, x_train2, y_train, degree,n_test):
+def gradientFunction_unified(x_train1, x_train2, y_train, degree,n_test):
     
     X_testP, X_testE = test(x_train1, n_test)
     _ , mu_test_regression_P = poly_regression_unified(x_train1, x_train2, y_train, X_testP, degree)
@@ -241,7 +241,7 @@ def gradientFunction(x_train1, x_train2, y_train, degree,n_test):
 
 def poly_regression_prime_unified(x_train1, x_train2, y, x_virtual, degree):
     
-    gradP_V, gradE_T = gradientFunction(x_train1, x_train2, y,degree, n_test = 30)
+    gradP_V, gradE_T = gradientFunction_unified(x_train1, x_train2, y,degree, n_test = 30)
     X_testP, X_testE = test(x_train1, n_test= 30)
     
     poly = PolynomialFeatures(degree)
